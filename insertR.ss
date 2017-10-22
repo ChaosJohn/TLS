@@ -1,6 +1,11 @@
-(define insertR_cj
+(define insertR
   (lambda (new old lat)
     (cond 
-      ((null? lat) '())
-      ((eq? old (car lat)) (cons old (cons new (cdr lat))))
-      (else (cons (car lat) (insertR_cj new old (cdr lat)))))))
+      ((null? lat) (quote ()))
+      (else (cond 
+              ((eq? old (car lat)) 
+               (cons old 
+                     (cons new (cdr lat))))
+              (else (cons (car lat) 
+                          (insertR new old 
+                                   (cdr lat)))))))))
