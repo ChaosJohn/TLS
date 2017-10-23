@@ -9,7 +9,3 @@
 (define sub1
   (lambda (x)
     (- x 1)))
-
-(load "lat.ss")
-(load "member.ss")
-(load "member_cj.ss")
